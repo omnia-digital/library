@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\OmniaLibrary;
 
+use OmniaDigital\OmniaLibrary\Commands\OmniaLibraryCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use OmniaDigital\OmniaLibrary\Commands\OmniaLibraryCommand;
 
 class OmniaLibraryServiceProvider extends PackageServiceProvider
 {

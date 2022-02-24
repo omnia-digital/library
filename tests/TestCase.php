@@ -3,8 +3,8 @@
 namespace OmniaDigital\OmniaLibrary\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use OmniaDigital\OmniaLibrary\OmniaLibraryServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
