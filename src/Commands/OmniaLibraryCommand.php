@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace OmniaDigital\OmniaLibrary\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class OmniaLibraryCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'library';
 
     public $description = 'My command';
 

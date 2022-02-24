@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace OmniaDigital\OmniaLibrary;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use OmniaDigital\OmniaLibrary\Commands\OmniaLibraryCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class OmniaLibraryServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('library')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_library_table')
+            ->hasCommand(OmniaLibraryCommand::class);
     }
 }
