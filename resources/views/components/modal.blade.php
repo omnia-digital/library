@@ -31,7 +31,6 @@
                 $dispatch('modal-closed', '{{ $id }}');
             },
         }"
-        class="flex justify-center"
         x-init="() => {
             window.addEventListener('{{ $id }}', e => {
                 const eventType = e.detail.type;
@@ -43,7 +42,7 @@
                 }
             });
         }"
-        {{ $attributes }}
+        {{ $attributes->merge(['class' => 'flex justify-center']) }}
 >
     <!-- Trigger -->
     {{ $trigger ?? null }}
