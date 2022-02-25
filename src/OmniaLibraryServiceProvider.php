@@ -2,11 +2,10 @@
 
 namespace OmniaDigital\OmniaLibrary;
 
-use Closure;
 use Illuminate\Support\Facades\Blade;
+use OmniaDigital\OmniaLibrary\Commands\OmniaLibraryCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use OmniaDigital\OmniaLibrary\Commands\OmniaLibraryCommand;
 
 class OmniaLibraryServiceProvider extends PackageServiceProvider
 {
