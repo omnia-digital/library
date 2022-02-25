@@ -25,6 +25,11 @@ class OmniaLibraryServiceProvider extends PackageServiceProvider
         $this->registerLibraryDirectives();
     }
 
+    private function registerViews(): void
+    {
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'library');
+    }
+
     private function registerLibraryDirectives(): void
     {
         Blade::directive('libraryStyles', function () {
@@ -42,10 +47,5 @@ EOF;
 <script src="$scriptsUrl"></script>
 EOF;
         });
-    }
-
-    private function registerViews(): void
-    {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'library');
     }
 }
