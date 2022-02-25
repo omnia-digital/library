@@ -1,19 +1,11 @@
-# Offer a bunch of components for modern web
+# Omnia Library
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/omnia-digital/library.svg?style=flat-square)](https://packagist.org/packages/omnia-digital/library)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/omnia-digital/library/run-tests?label=tests)](https://github.com/omnia-digital/library/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/omnia-digital/library/Check%20&%20fix%20styling?label=code%20style)](https://github.com/omnia-digital/library/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/omnia-digital/library.svg?style=flat-square)](https://packagist.org/packages/omnia-digital/library)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/library.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/library)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+Offer a bunch of components for modern web.
 
 ## Installation
 
@@ -23,24 +15,46 @@ You can install the package via composer:
 composer require omnia-digital/library
 ```
 
-You can publish and run the migrations with:
+Publish the package scripts:
 
 ```bash
-php artisan vendor:publish --tag="library-migrations"
-php artisan migrate
+php artisan vendor:publish --tag="library-assets"
 ```
+
+Include the assets
+
+```html
+<html>
+<head>
+    ...
+    @libraryStyles
+</head>
+<body>
+    ...
+    @libraryScripts
+</body>
+</html>
+```
+
+Config Tailwind CSS for all components in `tailwind.config.js`:
+
+```js
+module.exports = {
+    content: [
+        ...
+        './vendor/omnia-digital/library/resources/views/**/*.blade.php',
+    ]
+};
+```
+
+## Optional Steps
+
+## Config File + Component Views
 
 You can publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="library-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
 ```
 
 Optionally, you can publish the views using
@@ -49,18 +63,26 @@ Optionally, you can publish the views using
 php artisan vendor:publish --tag="library-views"
 ```
 
+## Alpine.js Plugins
+
+This package uses **focus** and **collapse** plugins for improving UI/UX. Consider adding it in your `resources/js/app.js`:
+
+```js
+import Alpine from 'alpinejs';
+import focus from '@alpinejs/focus';
+import collapse from '@alpinejs/collapse';
+
+Alpine.plugin(focus)
+Alpine.plugin(collapse)
+
+window.Alpine = Alpine;
+
+Alpine.start();
+```
+
 ## Usage
 
-```php
-$omniaLibrary = new OmniaDigital\OmniaLibrary();
-echo $omniaLibrary->echoPhrase('Hello, OmniaDigital!');
-```
-
-## Testing
-
-```bash
-composer test
-```
+...
 
 ## Changelog
 

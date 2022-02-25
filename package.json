@@ -1,5 +1,10 @@
 {
   "devDependencies": {
-    "laravel-mix": "^6.0.43"
+    "laravel-mix": "^6.0.43",
+    "postcss": "^8.1.14",
+    "postcss-import": "^14.0.1"
+  },
+  "dependencies": {
+    "tippy.js": "^6.3.7"
   }
 }

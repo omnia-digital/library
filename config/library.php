@@ -2,6 +2,4 @@
 
 return [
 
-    'asset_url' => null,
-
 ];

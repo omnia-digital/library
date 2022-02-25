@@ -15,39 +15,37 @@ class OmniaLibraryServiceProvider extends PackageServiceProvider
             ->name('library')
             ->hasConfigFile()
             ->hasViews()
+            ->hasAssets()
             ->hasCommand(OmniaLibraryCommand::class);
     }
 
     public function bootingPackage()
     {
         $this->registerViews();
-        $this->registerLibraryScriptsDirective();
+        $this->registerLibraryDirectives();
     }
 
-    private function registerLibraryScriptsDirective(): void
+    private function registerLibraryDirectives(): void
     {
-        Blade::directive('omniaLibraryJs', function ($expression) {
-            $debug = config('app.debug');
+        Blade::directive('libraryStyles', function () {
+            $styleUrl = asset('/vendor/library/library.css');
 
-            //$scripts = con;
+            return <<<EOF
+<link rel="stylesheet" href="$styleUrl">
+EOF;
+        });
 
-            // HTML Label.
-            $html = $debug ? ['<!-- Livewire Scripts -->'] : [];
+        Blade::directive('libraryScripts', function () {
+            $scriptsUrl = asset('/vendor/library/library.js');
 
-            // JavaScript assets.
-            $html[] = $debug ? $scripts : $this->minify($scripts);
-
-            return implode("\n", $html);
+            return <<<EOF
+<script src="$scriptsUrl"></script>
+EOF;
         });
     }
 
     private function registerViews(): void
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'library');
-    }
-
-    private function minify($subject): array|string|null
-    {
-        return preg_replace('~(\v|\t|\s{2,})~m', '', $subject);
     }
 }
