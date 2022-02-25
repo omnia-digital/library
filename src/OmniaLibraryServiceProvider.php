@@ -21,8 +21,12 @@ class OmniaLibraryServiceProvider extends PackageServiceProvider
 
     public function bootingPackage()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'library');
+        $this->registerViews();
+        $this->registerLibraryScriptsDirective();
+    }
 
+    private function registerLibraryScriptsDirective(): void
+    {
         Blade::directive('omniaLibraryJs', function ($expression) {
             $debug = config('app.debug');
 
@@ -38,7 +42,12 @@ class OmniaLibraryServiceProvider extends PackageServiceProvider
         });
     }
 
-    protected function minify($subject): array|string|null
+    private function registerViews(): void
+    {
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'library');
+    }
+
+    private function minify($subject): array|string|null
     {
         return preg_replace('~(\v|\t|\s{2,})~m', '', $subject);
     }
