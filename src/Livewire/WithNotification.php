@@ -8,8 +8,8 @@ trait WithNotification
     {
         $this->dispatchBrowserEvent('notify', [
             'message' => $message,
-            'type'    => 'success',
-            'action'  => $action
+            'type' => 'success',
+            'action' => $action,
         ]);
     }
 
@@ -17,8 +17,8 @@ trait WithNotification
     {
         $this->dispatchBrowserEvent('notify', [
             'message' => $message,
-            'type'    => 'error',
-            'action'  => $action
+            'type' => 'error',
+            'action' => $action,
         ]);
     }
 
@@ -26,8 +26,8 @@ trait WithNotification
     {
         $this->dispatchBrowserEvent('notify', [
             'message' => $message,
-            'type'    => 'info',
-            'action'  => $action
+            'type' => 'info',
+            'action' => $action,
         ]);
     }
 
