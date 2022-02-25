@@ -1,5 +1,7 @@
 <?php
-// config for OmniaDigital/OmniaLibrary
+
 return [
+
+    'asset_url' => null,
 
 ];

@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class OmniaLibraryCommand extends Command
 {
-    public $signature = 'library';
+    public $signature = 'omnia-library:set-color';
 
     public $description = 'My command';
 
