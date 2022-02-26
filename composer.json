@@ -13,6 +13,11 @@
             "name": "Omnia",
             "email": "phuc@omniadigital.io",
             "role": "Developer"
+        },
+        {
+            "name": "Omnia",
+            "email": "josht@omniadigital.io",
+            "role": "Developer"
         }
     ],
     "require": {
