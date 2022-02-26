@@ -4,21 +4,21 @@
 
 <div
         x-data="{
-        selectedId: null,
-        init() {
-            // Set the first available tab on the page on page load.
-            this.$nextTick(() => this.select(this.$id('tab', '{{ $default }}')))
-        },
-        select(id) {
-            this.selectedId = id
-        },
-        isSelected(id) {
-            return this.selectedId === id
-        },
-        whichChild(el, parent) {
-            return Array.from(parent.children).indexOf(el) + 1
-        }
-    }"
+            selectedId: null,
+            init() {
+                // Set the first available tab on the page on page load.
+                this.$nextTick(() => this.select(this.$id('tab', '{{ $default }}')))
+            },
+            select(id) {
+                this.selectedId = id
+            },
+            isSelected(id) {
+                return this.selectedId === id
+            },
+            whichChild(el, parent) {
+                return Array.from(parent.children).indexOf(el) + 1
+            }
+        }"
         x-id="['tab']"
         class="max-w-3xl bg-white"
 >

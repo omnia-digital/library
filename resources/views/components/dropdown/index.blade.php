@@ -60,8 +60,8 @@
                 x-transition.origin.top.left
                 x-on:click.outside="close($refs.trigger)"
                 :id="$id('dropdown')"
-                style="display: none;"
                 class="absolute {{ $positionClasses }} mt-2 w-36 bg-white border border-black rounded shadow-md overflow-hidden divide-y divide-black"
+                style="display: none;"
         >
             {{ $slot }}
         </div>
