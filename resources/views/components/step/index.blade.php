@@ -65,9 +65,10 @@
         x-id="['step-wizard']"
         x-on:current-step-passed.window="handleCurrentStepPassed"
         x-bind:id="$id('step-wizard')"
+        {{ $attributes }}
 >
     <nav :aria-label="$id('step-wizard')">
-        <ol x-ref="steplist" role="list" {{ $attributes->merge(['class' => 'space-y-4 md:flex md:space-y-0 md:space-x-8']) }}>
+        <ol x-ref="steplist" role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
             {{ $items }}
         </ol>
     </nav>
