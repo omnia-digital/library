@@ -32,7 +32,6 @@
             async goToStep(id) {
                 let currentStepNumber = parseInt(this.currentId.replace($el.id + '-', ''));
                 let destinationStepNumber = parseInt(id.replace($el.id + '-', ''));
-                let totalStep = this.$refs.steplist.children.length;
 
                 // Go to previous step
                 if (destinationStepNumber < currentStepNumber) {
@@ -60,24 +59,25 @@
                 }
 
                 // Allow to skip steps (Go multiple steps)
-                // Submit all Livewire components from step 1 -> total
-                let passedLivewireComponentIds = [];
+                // Submit all Livewire components from step 1 -> destination step
+                let totalSubmittedComponents = 0;
 
-                for (let i = 1; i <= totalStep; i++) {
+                for (let i = 1; i <= destinationStepNumber; i++) {
+                    totalSubmittedComponents++;
+
                     let passedLivewireComponentId = await this.findLivewireStepComponent(i)?.submit();
 
                     // If one component is failed, stop submit the subsequent components
                     if (!passedLivewireComponentId) {
                          break;
                     }
-
-                    // Store all passed Livewire component ID, so we can know how many steps are passed
-                    passedLivewireComponentIds.push(passedLivewireComponentId);
                 }
 
-                // Go to step that has index is after amount of passed steps.
-                // For example, if there are 2 passed steps, then go to step 3rd.
-                this.select(this.$id('step-wizard', passedLivewireComponentIds.length + 1));
+                // Go to the step that has index equals to total submitted components (PASSED + FAILED ones).
+                // [1 - PASSED], [2 - PASSED], [3- PASSED], [4 - FAILED] --> Total submitted components is 4.
+                // [1 - FAILED], [2 - NOT SUBMITTED], [3- NOT SUBMITTED], [4 - NOT SUBMITTED] --> Total submitted components is 1.
+                // [1 - PASSED], [2 - FAILED], [3- NOT SUBMITTED], [4 - NOT SUBMITTED] --> Total submitted components is 2.
+                this.select(this.$id('step-wizard', totalSubmittedComponents));
             },
             findLivewireStepComponent(currentStepNumber) {
                 // Find livewire component of the current step.
