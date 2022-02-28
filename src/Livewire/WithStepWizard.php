@@ -57,6 +57,11 @@ trait WithStepWizard
         return Arr::get(session()->get($this->getSessionDataKey()), $key, $default);
     }
 
+    public function resetStepSessionData(): void
+    {
+        session()->forget($this->getSessionDataKey());
+    }
+
     protected function enableStepSessionData(): bool
     {
         return true;
