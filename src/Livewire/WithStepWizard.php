@@ -8,10 +8,12 @@ trait WithStepWizard
 {
     public function mountWithStepWizard()
     {
-        $this->enableStepSessionData() && $this->fillSessionData();
+        if ($this->enableStepSessionData() && $this->enableAutoFillSessionData()) {
+            $this->fillSessionData();
+        }
     }
 
-    public function submit(): void
+    public function submit(): string
     {
         $stepSessionData = $this->handle() ?? [];
 
@@ -22,7 +24,19 @@ trait WithStepWizard
             session()->put($this->getSessionDataKey(), array_merge($allSessionData, $stepSessionData));
         }
 
-        $this->dispatchBrowserEvent('current-step-passed');
+        return $this->id;
+    }
+
+    public function next(): void
+    {
+        $livewireComponentId = $this->submit();
+
+        $this->dispatchBrowserEvent('next-step-emitted', $livewireComponentId);
+    }
+
+    public function back(): void
+    {
+        $this->dispatchBrowserEvent('previous-step-emitted');
     }
 
     protected function fillSessionData()
@@ -44,6 +58,11 @@ trait WithStepWizard
     }
 
     protected function enableStepSessionData(): bool
+    {
+        return true;
+    }
+
+    protected function enableAutoFillSessionData(): bool
     {
         return true;
     }

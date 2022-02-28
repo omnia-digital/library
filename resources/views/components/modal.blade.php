@@ -78,7 +78,9 @@
                     {{ $title }}
                 </h2>
 
-                {{ $content }}
+                <div class="py-4">
+                    {{ $content }}
+                </div>
 
                 <div class="mt-8 flex space-x-2">
                     {{ $actions ?? null }}

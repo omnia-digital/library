@@ -12,16 +12,27 @@
             select(id) {
                 this.currentId = id
             },
-            handleCurrentStepPassed() {
-                let totalStep = this.$refs.steplist.children.length;
-                let currentStepNumber = parseInt(this.currentId.replace($el.id + '-', ''));
-                let nextStepNumber = currentStepNumber + 1 > totalStep ? totalStep : currentStepNumber + 1;
+            handleNextStepEmitted(passedLivewireComponentId) {
+                let passedStepPanelElement = Array.from(this.$refs.stepPanels.children).filter(StepPanelElement => {
+                    return StepPanelElement.children[0].getAttribute('wire:id') === passedLivewireComponentId;
+                });
 
-                this.select(this.$id('step-wizard', nextStepNumber))
+                let totalStep = this.$refs.steplist.children.length;
+                let currentStepNumber = this.whichChild(passedStepPanelElement[0], this.$refs.stepPanels);
+                let nextStepNumber = currentStepNumber > totalStep ? totalStep : currentStepNumber + 1;
+
+                this.select(this.$id('step-wizard', nextStepNumber));
             },
-            goToStep(id) {
+            handlePreviousStepEmitted() {
+                let currentStepNumber = parseInt(this.currentId.replace($el.id + '-', ''));
+                let previousStepNumber = currentStepNumber === 1 ? currentStepNumber : currentStepNumber - 1;
+
+                this.select(this.$id('step-wizard', previousStepNumber));
+            },
+            async goToStep(id) {
                 let currentStepNumber = parseInt(this.currentId.replace($el.id + '-', ''));
                 let destinationStepNumber = parseInt(id.replace($el.id + '-', ''));
+                let totalStep = this.$refs.steplist.children.length;
 
                 // Go to previous step
                 if (destinationStepNumber < currentStepNumber) {
@@ -35,12 +46,38 @@
                     return;
                 }
 
-                // Go to next step but only allow go one by one step.
-                if (destinationStepNumber !== currentStepNumber + 1) {
+                // Just go one step
+                if (destinationStepNumber === currentStepNumber + 1) {
+                    // Just submit the current Livewire component
+                    let passedLivewireComponentId = await this.findLivewireStepComponent(currentStepNumber)?.submit();
+
+                    // If pass, go to next step
+                    if (passedLivewireComponentId) {
+                        this.select(id);
+                    }
+
                     return;
                 }
 
-                this.findLivewireStepComponent(currentStepNumber)?.call('submit');
+                // Allow to skip steps (Go multiple steps)
+                // Submit all Livewire components from step 1 -> total
+                let passedLivewireComponentIds = [];
+
+                for (let i = 1; i <= totalStep; i++) {
+                    let passedLivewireComponentId = await this.findLivewireStepComponent(i)?.submit();
+
+                    // If one component is failed, stop submit the subsequent components
+                    if (!passedLivewireComponentId) {
+                         break;
+                    }
+
+                    // Store all passed Livewire component ID, so we can know how many steps are passed
+                    passedLivewireComponentIds.push(passedLivewireComponentId);
+                }
+
+                // Go to step that has index is after amount of passed steps.
+                // For example, if there are 2 passed steps, then go to step 3rd.
+                this.select(this.$id('step-wizard', passedLivewireComponentIds.length + 1));
             },
             findLivewireStepComponent(currentStepNumber) {
                 // Find livewire component of the current step.
@@ -63,7 +100,8 @@
             }
         }"
         x-id="['step-wizard']"
-        x-on:current-step-passed.window="handleCurrentStepPassed"
+        x-on:next-step-emitted.window="handleNextStepEmitted($event.detail)"
+        x-on:previous-step-emitted.window="handlePreviousStepEmitted"
         x-bind:id="$id('step-wizard')"
         {{ $attributes }}
 >
