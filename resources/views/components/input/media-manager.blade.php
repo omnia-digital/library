@@ -12,7 +12,7 @@
         showMediaManager(file, metadata) {
             // Send data back to media manager to pre-fill data.
             this.$wire.emitTo(
-                'admin.media-manager',
+                'media-manager',
                 'media-manager:show',
                 {
                     id: '{{ $id }}',

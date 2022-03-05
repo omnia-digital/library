@@ -84,6 +84,10 @@ Alpine.start();
 
 ...
 
+## Media Manager
+
+To use the Media Manager component, you need to install this package first: https://github.com/phuclh/media-manager
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
