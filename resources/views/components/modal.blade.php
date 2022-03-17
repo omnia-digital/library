@@ -71,7 +71,7 @@
         >
             <div
                     x-on:click.stop
-                    x-trap.noscroll.inert="open"
+                    x-trap.noscroll="open"
                     class="relative {{ $maxWidth }} w-full bg-white border border-black rounded-lg shadow-lg p-12 overflow-y-auto"
             >
                 <h2 class="text-3xl font-bold" :id="$id('modal-title')">
