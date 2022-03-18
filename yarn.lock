@@ -1121,6 +1121,15 @@
   "resolved" "https://registry.npmjs.org/@tiptap/extension-paragraph/-/extension-paragraph-2.0.0-beta.23.tgz"
   "version" "2.0.0-beta.23"
 
+"@tiptap/extension-placeholder@^2.0.0-beta.48":
+  "integrity" "sha512-TZNGAHocPoV5DtB8Q5BwQU2uf5vDiwLxbgVHRAIme9P4VsVqa/U1i1TkyN5A5BVdfOzc+E4EOU7cKuyjy7DNyA=="
+  "resolved" "https://registry.npmjs.org/@tiptap/extension-placeholder/-/extension-placeholder-2.0.0-beta.48.tgz"
+  "version" "2.0.0-beta.48"
+  dependencies:
+    "prosemirror-model" "^1.16.1"
+    "prosemirror-state" "^1.3.4"
+    "prosemirror-view" "^1.23.6"
+
 "@tiptap/extension-strike@^2.0.0-beta.27":
   "integrity" "sha512-2dmCgtesuDdivM/54Q+Y6Tc3JbGz1SkHP6c62piuqBiYLWg3xa16zChZOhfN8szbbQlBgLT6XRTDt3c2Ux+Dug=="
   "resolved" "https://registry.npmjs.org/@tiptap/extension-strike/-/extension-strike-2.0.0-beta.27.tgz"

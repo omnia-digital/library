@@ -4,6 +4,8 @@
     'wordCountType' => 'word', // word or character
     'characterLimit' => null,
     'heightClass' => 'min-h-[500px]',
+    'placeholderClass' => 'is-editor-empty',
+    'placeholder' => 'Write something...',
 ])
 
 <div class="editor bg-white border border-gray-200 rounded-md shadow-sm">
@@ -15,6 +17,8 @@
             wordCountType: '{{ $wordCountType }}',
             characterLimit: '{{ $characterLimit }}',
             heightClass: '{{ $heightClass }}',
+            placeholderClass: '{{ $placeholderClass }}',
+            placeholderText: '{{ $placeholder }}',
             ...tiptap()
         }"
         x-init="() => {

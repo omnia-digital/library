@@ -6,13 +6,14 @@ import Table from '@tiptap/extension-table'
 import TableRow from '@tiptap/extension-table-row'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
-import Underline from "@tiptap/extension-underline";
-import {TextAlign} from "@tiptap/extension-text-align";
-import {BubbleMenu} from "@tiptap/extension-bubble-menu";
-import {FloatingMenu} from "@tiptap/extension-floating-menu";
+import Underline from "@tiptap/extension-underline"
+import {TextAlign} from "@tiptap/extension-text-align"
+import {BubbleMenu} from "@tiptap/extension-bubble-menu"
+import {FloatingMenu} from "@tiptap/extension-floating-menu"
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import lowlight from 'lowlight'
 import CharacterCount from '@tiptap/extension-character-count'
+import Placeholder from '@tiptap/extension-placeholder'
 
 // Tiptap editor on alpine init
 document.addEventListener('alpine:init', () => {
@@ -136,6 +137,10 @@ document.addEventListener('alpine:init', () => {
                             limit: this.characterLimit ? this.characterLimit : null,
                             mode: 'textSize',
                         }),
+                        Placeholder.configure({
+                            emptyEditorClass: this.placeholderClass,
+                            placeholder: this.placeholderText,
+                        })
                     ],
                     editorProps: {
                         attributes: {
