@@ -58,8 +58,8 @@ EOF;
     public function provideToScript(): array
     {
         return [
-            'domain'             => (new Uri(config('app.url')))->getHost(),
-            'external_links_rel' => config('library.tiptap.external_links.rel')
+            'domain' => (new Uri(config('app.url')))->getHost(),
+            'external_links_rel' => config('library.tiptap.external_links.rel'),
         ];
     }
 }
