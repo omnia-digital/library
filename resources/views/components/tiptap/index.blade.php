@@ -1,6 +1,6 @@
 @props([
     'showWordCount' => true,
-    'wordCountText' => 'Word Count',
+    'wordCountText' => 'Count',
     'wordCountType' => 'word', // word or character
     'characterLimit' => null,
     'heightClass' => 'min-h-[500px]',
