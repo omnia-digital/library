@@ -12,6 +12,7 @@ import {BubbleMenu} from "@tiptap/extension-bubble-menu";
 import {FloatingMenu} from "@tiptap/extension-floating-menu";
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import lowlight from 'lowlight'
+import CharacterCount from '@tiptap/extension-character-count'
 
 // Tiptap editor on alpine init
 document.addEventListener('alpine:init', () => {
@@ -130,6 +131,10 @@ document.addEventListener('alpine:init', () => {
                             tippyOptions: {
                                 theme: 'light',
                             }
+                        }),
+                        CharacterCount.configure({
+                            limit: this.characterLimit ? this.characterLimit : null,
+                            mode: 'textSize',
                         }),
                     ],
                     editorProps: {
