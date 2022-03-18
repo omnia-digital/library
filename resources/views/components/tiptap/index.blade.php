@@ -21,9 +21,6 @@
             placeholderText: '{{ $placeholder }}',
             ...tiptap()
         }"
-        x-init="() => {
-            $watch('content', () => wordCount = wordCountType === 'word' ? editor().storage.characterCount.words() : editor().storage.characterCount.characters())
-        }"
     >
         <x-library::tiptap.menu/>
 

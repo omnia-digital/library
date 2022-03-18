@@ -162,6 +162,23 @@ document.addEventListener('alpine:init', () => {
                     }
                 });
 
+                this.$watch('content', () => {
+                    this.wordCount = this.wordCountType === 'word'
+                        ? editor.storage.characterCount.words()
+                        : editor.storage.characterCount.characters();
+
+                    // If the new content matches TipTap's then we just skip.
+                    if (this.content === editor.getHTML()) {
+                        return;
+                    }
+
+                    // Otherwise, it means that a force external to TipTap
+                    // is modifying the data on this Alpine component,
+                    // which could be Livewire itself.
+                    // In this case, we just need to update TipTap's content.
+                    editor.commands.setContent(this.content, false);
+                })
+
                 window.addEventListener('media-manager:file-selected', (event) => {
                     if (event.detail.id === editorMediaManagerId) {
                         // Get image dimensions.
