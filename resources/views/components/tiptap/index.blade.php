@@ -3,6 +3,7 @@
     'wordCountText' => 'Word Count',
     'wordCountType' => 'word', // word or character
     'characterLimit' => null,
+    'heightClass' => 'min-h-[500px]',
 ])
 
 <div class="editor bg-white border border-gray-200 rounded-md shadow-sm">
@@ -13,6 +14,7 @@
             wordCount: 0,
             wordCountType: '{{ $wordCountType }}',
             characterLimit: '{{ $characterLimit }}',
+            heightClass: '{{ $heightClass }}',
             ...tiptap()
         }"
         x-init="() => {
