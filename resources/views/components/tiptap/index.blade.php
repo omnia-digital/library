@@ -26,11 +26,17 @@
 
         <div x-ref="editorReference" {{ $attributes->whereDoesntStartWith('wire:model') }}></div>
 
-        @if ($showWordCount)
-            <div class="px-2 py-3 text-right text-gray-500 text-sm">
-                {{ $wordCountText }}: <span x-text="wordCount">0</span>
+        <div class="flex items-center">
+            <div>
+                {{ $footer ?? null }}
             </div>
-        @endif
+
+            @if ($showWordCount)
+                <div class="flex-1 px-2 py-3 text-right text-gray-500 text-sm">
+                    {{ $wordCountText }}: <span x-text="wordCount">0</span>
+                </div>
+            @endif
+        </div>
 
         <!-- Modals -->
         <x-library::tiptap.link-modal/>
@@ -42,4 +48,3 @@
         <script src="{{ asset('/vendor/library/tiptap.js') }}"></script>
     @endpush
 @endonce
-
