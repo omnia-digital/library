@@ -14,7 +14,7 @@
                         </thead>
                     @endif
 
-                    <tbody {{ $body->attributes->class(['bg-white divide-y divide-gray-200']) }}>
+                    <tbody {{ $body->attributes->class(['bg-neutral divide-y divide-gray-200']) }}>
                         {{ $body }}
                     </tbody>
                 </table>

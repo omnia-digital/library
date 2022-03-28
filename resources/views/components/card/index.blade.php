@@ -3,7 +3,7 @@
     'description' => null
 ])
 
-<div {{ $attributes->merge(['class' => 'bg-white shadow overflow-hidden sm:rounded-lg']) }}>
+<div {{ $attributes->merge(['class' => 'bg-neutral shadow overflow-hidden sm:rounded-lg']) }}>
     @if (isset($heading) || isset($description) || isset($actions))
         <div class="px-4 py-5 sm:px-6 -ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
             <div class="ml-4 mt-2">

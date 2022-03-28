@@ -20,7 +20,7 @@
             }
         }"
         x-id="['tab']"
-        class="max-w-3xl bg-white"
+        class="max-w-3xl bg-neutral"
 >
     <ul
             x-ref="tablist"

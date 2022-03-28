@@ -9,8 +9,8 @@
             x-on:click.prevent="goToStep($el.id)"
             x-bind:id="$id('step-wizard', whichChild($el.parentElement, $refs.steplist))"
             x-bind:class="{
-                'border-indigo-600 hover:border-indigo-800': isCompleted($el.id),
-                'border-indigo-600': isCurrent($el.id),
+                'border-secondary hover:border-secondary-dark': isCompleted($el.id),
+                'border-secondary': isCurrent($el.id),
                 'border-gray-200 hover:border-gray-300': isUpcoming($el.id)
             }"
             x-bind:aria-current="isCurrent($el.parentElement.id) ? 'step' : ''"
@@ -18,8 +18,8 @@
     >
         <span
                 x-bind:class="{
-                    'text-indigo-600 group-hover:text-indigo-800': isCompleted($el.parentElement.id),
-                    'text-indigo-600 ': isCurrent($el.parentElement.id),
+                    'text-secondary group-hover:text-secondary-dark': isCompleted($el.parentElement.id),
+                    'text-secondary ': isCurrent($el.parentElement.id),
                     'text-gray-500 group-hover:text-gray-700': isUpcoming($el.parentElement.id)
                 }"
                 class="text-xs font-semibold tracking-wide uppercase"

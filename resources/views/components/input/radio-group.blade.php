@@ -35,9 +35,9 @@
         $watch('selectedItems', () => setActive());
     }"
     x-on:click.prevent.stop="setSelectedItems"
-    x-bind:class="{'border-transparent ring-2 ring-blue-500': isActive, 'border-gray-300': !isActive}"
+    x-bind:class="{'border-transparent ring-2 ring-secondary': isActive, 'border-gray-300': !isActive}"
     x-id="['radio-card', 'radio-card-description']"
-    {{ $attributes->class(['relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none']) }}
+    {{ $attributes->class(['relative bg-neutral border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none']) }}
     {{ $attributes->wire('key') }}
 >
     <input
@@ -58,6 +58,6 @@
             </div>
         </div>
     </div>
-    <x-heroicon-s-check-circle x-show="isActive" class="h-5 w-5 text-blue-600" style="display: none"/>
-    <div x-bind:class="{'border border-blue-500': isActive, 'border-2 border-transparent': !isActive}" class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></div>
+    <x-heroicon-s-check-circle x-show="isActive" class="h-5 w-5 text-secondary-dark" style="display: none"/>
+    <div x-bind:class="{'border border-secondary': isActive, 'border-2 border-transparent': !isActive}" class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></div>
 </label>

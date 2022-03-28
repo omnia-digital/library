@@ -4,7 +4,7 @@
     'actions'
 ])
 
-<div class="flex-1 flex items-center justify-between border border-gray-200 bg-white rounded-md truncate">
+<div class="flex-1 flex items-center justify-between border border-gray-200 bg-neutral rounded-md truncate">
     <div class="flex-1 px-4 py-2 text-sm truncate">
         <a href="#" {{ $attributes->merge(['class' => 'text-gray-900 font-medium hover:text-gray-600']) }}>{{ $title }}</a>
 

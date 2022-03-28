@@ -6,7 +6,7 @@
     'placeholder' => 'Write something...',
 ])
 
-<div class="editor bg-white border border-gray-200 rounded-md shadow-sm">
+<div class="editor bg-neutral border border-gray-200 rounded-md shadow-sm">
     <div
             wire:ignore
             x-data="{
