@@ -3,7 +3,7 @@
     'action'
 ])
 
-<div {{ $attributes->merge(['class' => 'rounded-md bg-primary-50 p-4']) }}>
+<div {{ $attributes->merge(['class' => 'rounded-md bg-primary-light p-4']) }}>
     <div class="flex">
         <div class="flex-shrink-0">
             <!-- Heroicon name: solid/information-circle -->
