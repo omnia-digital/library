@@ -8,13 +8,13 @@
         <div class="px-4 py-5 sm:px-6 -ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
             <div class="ml-4 mt-2">
                 @isset($heading)
-                    <h3 class="text-base leading-6 font-medium text-gray-900">
+                    <h3 class="text-base leading-6 font-medium text-color-dark">
                         {{ $heading }}
                     </h3>
                 @endisset
 
                 @isset ($description)
-                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                    <p class="mt-1 max-w-2xl text-sm text-color-base">
                         {{ $description }}
                     </p>
                 @endisset

@@ -20,7 +20,7 @@
                 x-bind:class="{
                     'text-secondary group-hover:text-secondary-dark': isCompleted($el.parentElement.id),
                     'text-secondary ': isCurrent($el.parentElement.id),
-                    'text-gray-500 group-hover:text-gray-700': isUpcoming($el.parentElement.id)
+                    'text-color-base group-hover:text-color-dark': isUpcoming($el.parentElement.id)
                 }"
                 class="text-xs font-semibold tracking-wide uppercase"
         >

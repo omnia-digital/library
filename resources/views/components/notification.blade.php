@@ -44,7 +44,7 @@
             <div class="flex items-start">
                 <!-- Icons -->
                 <div x-show="notification.type === 'info'" class="flex-shrink-0">
-                    <span aria-hidden="true" class="w-6 h-6 inline-flex items-center justify-center text-xl font-bold text-gray-400 border-2 border-gray-400 rounded-full">!</span>
+                    <span aria-hidden="true" class="w-6 h-6 inline-flex items-center justify-center text-xl font-bold text-color-light border-2 border-gray-400 rounded-full">!</span>
                     <span class="sr-only">Information:</span>
                 </div>
 
@@ -60,12 +60,12 @@
 
                 <!-- Text -->
                 <div class="ml-3 w-0 flex-1 pt-0.5">
-                    <p x-text="notification.content" class="text-sm leading-5 font-medium text-gray-900"></p>
+                    <p x-text="notification.content" class="text-sm leading-5 font-medium text-color-dark"></p>
                 </div>
 
                 <!-- Remove button -->
                 <div class="ml-4 flex-shrink-0 flex">
-                    <button @click="transitionOut()" type="button" class="inline-flex text-gray-400">
+                    <button @click="transitionOut()" type="button" class="inline-flex text-color-light">
                         <svg aria-hidden class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                         </svg>
