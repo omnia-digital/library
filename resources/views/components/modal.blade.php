@@ -45,9 +45,9 @@
         {{ $attributes->merge(['class' => 'flex justify-center']) }}
 >
     <!-- Trigger -->
-    {{ $trigger ?? null }}
+{{ $trigger ?? null }}
 
-    <!-- Modal -->
+<!-- Modal -->
     <div
             x-show="open"
             x-on:keydown.escape.prevent.stop="closeModal"
@@ -82,15 +82,17 @@
                     {{ $content }}
                 </div>
 
-                <div class="mt-8 flex space-x-2">
-                    {{ $actions ?? null }}
+                @if (isset($actions) || $hideCancelButton === false)
+                    <div class="mt-8 flex space-x-2">
+                        {{ $actions ?? null }}
 
-                    @if ($hideCancelButton === false)
-                        <button type="button" x-on:click="closeModal" class="bg-white border border-black rounded px-3 py-1.5">
-                            {{ $cancelButtonText }}
-                        </button>
-                    @endif
-                </div>
+                        @if ($hideCancelButton === false)
+                            <button type="button" x-on:click="closeModal" class="bg-white border border-black rounded px-3 py-1.5">
+                                {{ $cancelButtonText }}
+                            </button>
+                        @endif
+                    </div>
+                @endif
             </div>
         </div>
     </div>
