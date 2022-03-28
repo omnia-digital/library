@@ -50,10 +50,10 @@
     >
     <div class="flex-1 flex">
         <div class="flex flex-col">
-            <div x-bind:id="$id('radio-card')" class="block text-sm font-medium text-color-dark">
+            <div x-bind:id="$id('radio-card')" class="block text-sm font-medium text-dark-text-color">
                 {{ $title ?? Str::headline($value) }}
             </div>
-            <div x-bind:id="$id('radio-card-description')" {{ isset($description) ? $description->attributes->class(['mt-1 text-sm text-color-base']) : '' }}>
+            <div x-bind:id="$id('radio-card-description')" {{ isset($description) ? $description->attributes->class(['mt-1 text-sm text-base-text-color']) : '' }}>
                 {{ $description ?? null }}
             </div>
         </div>

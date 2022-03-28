@@ -3,7 +3,7 @@
     'direction' => null,
 ])
 
-<th scope="col" {{ $attributes->merge(['class' => 'px-6 py-3 text-left text-xs font-medium text-color-base uppercase tracking-wider']) }}>
+<th scope="col" {{ $attributes->merge(['class' => 'px-6 py-3 text-left text-xs font-medium text-base-text-color uppercase tracking-wider']) }}>
     @if ($sortable !== false)
         <button class="flex items-center space-x-1 group focus:outline-none">
             <span>{{ $slot }}</span>
