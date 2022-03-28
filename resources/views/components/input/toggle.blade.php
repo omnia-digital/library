@@ -2,7 +2,7 @@
 'falseValue' => false,
 'trueValue' => true,
 'falseBackgroundColor' => 'bg-gray-200',
-'trueBackgroundColor' => 'bg-blue-500'
+'trueBackgroundColor' => 'bg-primary-500'
 ])
 
 <button
