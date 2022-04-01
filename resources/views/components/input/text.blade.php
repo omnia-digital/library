@@ -3,7 +3,7 @@
 'label',
 'required' => false,
 'placeholder' => null,
-'class'
+'class' => ''
 ])
 
 @if (isset($label))
