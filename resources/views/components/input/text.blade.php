@@ -15,7 +15,9 @@
                 <span class="text-red-600 text-sm">*</span>
             @endif
         </label>
-        <input type="{{ $type }}" {{ $attributes->merge(['class' => 'block w-full border-0 pt-1 px-0 pb-0 text-neutral-dark placeholder-neutral focus:ring-0 text-sm', 'placeholder' => $placeholder ?? $label]) }}>
+        <input type="{{ $type }}" {{ $attributes->merge(['class' => "block w-full border-0 pt-1 px-0 pb-0 text-neutral-dark placeholder-neutral focus:ring-0 text-s " . $class, 'placeholder' =>
+        $placeholder
+         ?? $label]) }}>
     </div>
 @else
     <input {{ $attributes->merge(['type' => 'text', 'class' => 'focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-neutral-light rounded-md', 'placeholder' => $placeholder ?? null]) }}>
