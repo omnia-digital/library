@@ -1,12 +1,12 @@
 @props([
     'wordCountType' => 'word', // word or character
     'characterLimit' => null,
-    'heightClass' => 'min-h-[500px]',
+    'heightClass' => 'tiptap-height-full',
     'placeholderClass' => 'is-editor-empty',
     'placeholder' => 'Write something...',
 ])
 
-<div class="editor bg-neutral border border-gray-200 rounded-md shadow-sm">
+<div class="editor bg-neutral shadow-sm">
     <div
             wire:ignore
             x-data="{

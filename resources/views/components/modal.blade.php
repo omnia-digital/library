@@ -60,7 +60,7 @@
             style="display: none"
     >
         <!-- Overlay -->
-        <div x-show="open" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
+        <div x-show="open" x-transition.opacity class="fixed inset-0 bg-neutral-dark bg-opacity-50"></div>
 
         <!-- Panel -->
         <div
@@ -72,7 +72,7 @@
             <div
                     x-on:click.stop
                     x-trap.noscroll="open"
-                    class="relative {{ $maxWidth }} w-full bg-neutral border border-black rounded-lg shadow-lg p-12 overflow-y-auto"
+                    class="relative {{ $maxWidth }} w-full bg-neutral p-12 overflow-y-auto"
             >
                 <h2 class="text-3xl font-bold" :id="$id('modal-title')">
                     {{ $title }}
@@ -87,7 +87,7 @@
                         {{ $actions ?? null }}
 
                         @if ($hideCancelButton === false)
-                            <button type="button" x-on:click="closeModal" class="bg-neutral border border-black rounded px-3 py-1.5">
+                            <button type="button" x-on:click="closeModal" class="bg-neutral hover:border hover:border-neutral-dark rounded px-3 py-1.5">
                                 {{ $cancelButtonText }}
                             </button>
                         @endif
