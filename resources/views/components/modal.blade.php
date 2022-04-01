@@ -84,13 +84,13 @@
 
                 @if (isset($actions) || $hideCancelButton === false)
                     <div class="mt-8 flex space-x-2">
-                        {{ $actions ?? null }}
-
                         @if ($hideCancelButton === false)
                             <button type="button" x-on:click="closeModal" class="bg-neutral hover:border hover:border-neutral-dark rounded px-3 py-1.5">
                                 {{ $cancelButtonText }}
                             </button>
                         @endif
+
+                        {{ $actions ?? null }}
                     </div>
                 @endif
             </div>
