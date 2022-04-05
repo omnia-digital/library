@@ -4,9 +4,10 @@
     'heightClass' => 'tiptap-height-full',
     'placeholderClass' => 'is-editor-empty',
     'placeholder' => 'Write something...',
+    'class' => '',
 ])
 
-<div class="editor bg-neutral shadow-sm">
+<div class="editor bg-primary shadow-sm {{ $class }}">
     <div
             wire:ignore
             x-data="{
