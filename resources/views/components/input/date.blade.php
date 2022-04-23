@@ -29,7 +29,11 @@
         },
     }"
 >
-    <input class="w-full" x-ref="picker" type="text" wire:ignore>
+    <input
+            wire:ignore
+            x-ref="picker"
+            {{ $attributes->merge(['type' => 'text', 'class' => 'focus:ring-neutral-dark focus:border-neutral-dark block w-full shadow-sm sm:text-sm border-neutral-light rounded-md', 'placeholder' => $placeholder ?? null]) }}
+    >
 </div>
 
 @once
