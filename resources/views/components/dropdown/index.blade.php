@@ -49,6 +49,7 @@
                 x-on:click="toggle()"
                 :aria-expanded="open"
                 :aria-controls="$id('dropdown')"
+                {{ $trigger->attributes }}
         >
             {{ $trigger }}
         </div>
