@@ -25,6 +25,7 @@
         x-data="{
             value: @entangle($attributes->wire('model')),
             options: {{ \Illuminate\Support\Js::from($options) }},
+            disableTextFields: '{{ $disableTextFields !== false }}' != false,
             inputMin: 0,
             inputMax: 10,
             init() {
@@ -60,8 +61,8 @@
 
     @if ($showTextFields !== false)
         <div class="flex items-center space-x-4 mt-4">
-            <x-library::input.text placeholder="Min" x-data="" x-model="inputMin" x-bind:disabled="{{ $disableTextFields !== false }}"/>
-            <x-library::input.text placeholder="Max" x-data="" x-model="inputMax" x-bind:disabled="{{ $disableTextFields !== false }}"/>
+            <x-library::input.text placeholder="Min" x-data="" x-model="inputMin" x-bind:disabled="disableTextFields"/>
+            <x-library::input.text placeholder="Max" x-data="" x-model="inputMax" x-bind:disabled="disableTextFields"/>
         </div>
     @endif
 </div>
