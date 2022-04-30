@@ -43,7 +43,6 @@
     <input
         {{ $attributes->wire('model') }}
         type="checkbox"
-        value="Newsletter"
         class="sr-only"
         x-bind:aria-labelledby="$id('radio-card')"
         x-bind:aria-describedby="$id('radio-card-description')"
