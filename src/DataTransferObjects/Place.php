@@ -16,8 +16,8 @@ class Place
 
     public function address(): string
     {
-        $streetNumber = $this->addressComponents->first(fn($component) => Arr::get($component, 'types.0') === 'street_number');
-        $street = $this->addressComponents->first(fn($component) => Arr::get($component, 'types.0') === 'route');
+        $streetNumber = $this->addressComponents->first(fn ($component) => Arr::get($component, 'types.0') === 'street_number');
+        $street = $this->addressComponents->first(fn ($component) => Arr::get($component, 'types.0') === 'route');
 
         return trim(($streetNumber['long_name'] ?? '') . ' ' . ($street['long_name'] ?? ''));
     }
@@ -29,28 +29,28 @@ class Place
 
     public function postalCode(): string
     {
-        $postalCode = $this->addressComponents->first(fn($component) => Arr::get($component, 'types.0') === 'postal_code');
+        $postalCode = $this->addressComponents->first(fn ($component) => Arr::get($component, 'types.0') === 'postal_code');
 
         return $postalCode['long_name'] ?? '';
     }
 
     public function city(): string
     {
-        $city = $this->addressComponents->first(fn($component) => Arr::get($component, 'types.0') === 'locality');
+        $city = $this->addressComponents->first(fn ($component) => Arr::get($component, 'types.0') === 'locality');
 
         return $city['long_name'] ?? '';
     }
 
     public function state(): string
     {
-        $state = $this->addressComponents->first(fn($component) => Arr::get($component, 'types.0') === 'administrative_area_level_1');
+        $state = $this->addressComponents->first(fn ($component) => Arr::get($component, 'types.0') === 'administrative_area_level_1');
 
         return $state['short_name'] ?? '';
     }
 
     public function country(): string
     {
-        $state = $this->addressComponents->first(fn($component) => Arr::get($component, 'types.0') === 'country');
+        $state = $this->addressComponents->first(fn ($component) => Arr::get($component, 'types.0') === 'country');
 
         return $state['short_name'] ?? '';
     }
