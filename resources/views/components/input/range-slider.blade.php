@@ -55,6 +55,7 @@
                 });
             }
         }"
+        class="w-full"
         wire:ignore
 >
     <div x-ref="rangeSlider"></div>
