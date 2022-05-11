@@ -23,7 +23,7 @@ trait WithPlace
     {
         $params = array_merge($options, [
             'input' => $input,
-            'key' => $this->placeApiKey() ?? config('library.place.google.api_key')
+            'key' => $this->getPlaceApiKey()
         ]);
 
         $response = Http::get('https://maps.googleapis.com/maps/api/place/autocomplete/json', $params);
@@ -35,7 +35,7 @@ trait WithPlace
     {
         $params = array_merge($options, [
             'place_id' => $this->placeId,
-            'key' => config('services.google_maps.api_key', $this->placeApiKey()),
+            'key' => $this->getPlaceApiKey(),
         ]);
 
         $response = Http::get('https://maps.googleapis.com/maps/api/place/details/json', $params)
@@ -47,5 +47,10 @@ trait WithPlace
         }
 
         return new Place($response['result']['address_components']);
+    }
+
+    protected function getPlaceApiKey(): mixed
+    {
+        return $this->placeApiKey() ?? config('library.place.google.api_key');
     }
 }
