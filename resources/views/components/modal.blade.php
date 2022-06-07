@@ -60,7 +60,7 @@
             style="display: none"
     >
         <!-- Overlay -->
-        <div x-show="open" x-transition.opacity class="fixed inset-0 bg-neutral-dark bg-opacity-50"></div>
+        <div x-show="open" x-transition.opacity class="fixed inset-0 bg-neutral-dark opacity-50"></div>
 
         <!-- Panel -->
         <div
