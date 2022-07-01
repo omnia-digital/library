@@ -2,6 +2,8 @@
 
 namespace OmniaDigital\OmniaLibrary\Livewire;
 
+use Illuminate\Database\Eloquent\Builder;
+
 trait WithSorting
 {
     public string $sortField = 'id';
@@ -22,7 +24,7 @@ trait WithSorting
         $this->sortField = $field;
     }
 
-    public function applySorting($query)
+    public function applySorting(Builder $query): Builder
     {
         return $query->orderBy($this->sortField, $this->sortDirection);
     }
