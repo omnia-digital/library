@@ -8,7 +8,7 @@ trait WithMap
     {
         $this->dispatchBrowserEvent($mapId, [
             'type' => 'loadPlaces',
-            'places' => $this->formatPlaces($places)
+            'places' => $this->formatPlaces($places),
         ]);
     }
 
@@ -19,12 +19,12 @@ trait WithMap
                 'type' => 'Feature',
                 'properties' => [
                     'description' => $place['description'] ?? $place['name'],
-                    'icon' => $place['icon'] ?? 'rocket-15'
+                    'icon' => $place['icon'] ?? 'rocket-15',
                 ],
                 'geometry' => [
                     'type' => 'Point',
-                    'coordinates' => [$place['lng'], $place['lat']]
-                ]
+                    'coordinates' => [$place['lng'], $place['lat']],
+                ],
             ];
         })->all();
     }
