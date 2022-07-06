@@ -16,7 +16,7 @@ trait WithMap
     {
         $this->dispatchBrowserEvent($mapId, [
             'type' => 'fly',
-            'coordinate' => [$lng, $lat]
+            'coordinate' => [$lng, $lat],
         ]);
     }
 
