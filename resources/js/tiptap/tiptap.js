@@ -144,7 +144,7 @@ document.addEventListener('alpine:init', () => {
                     ],
                     editorProps: {
                         attributes: {
-                            class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-xl sm:max-w-none m-5 focus:outline-none' + ' ' + this.heightClass
+                            class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-xl sm:max-w-none focus:outline-none' + ' ' + this.heightClass
                         }
                     },
                     content: this.content,
