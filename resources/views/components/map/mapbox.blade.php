@@ -109,8 +109,14 @@
 
                 if (eventType === 'loadPlaces') {
                     removePlaces();
-                    console.log(e.detail.places);
                     addPlaces(e.detail.places)
+                }
+
+                if (eventType === 'fly') {
+                    map.flyTo({
+                        center: e.detail.coordinate,
+                        essential: true // this animation is considered essential with respect to prefers-reduced-motion
+                    });
                 }
             });
         </script>

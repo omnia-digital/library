@@ -12,6 +12,14 @@ trait WithMap
         ]);
     }
 
+    public function flyTo(string $mapId, string $lng, string $lat)
+    {
+        $this->dispatchBrowserEvent($mapId, [
+            'type' => 'fly',
+            'coordinate' => [$lng, $lat]
+        ]);
+    }
+
     public function formatPlaces(array $places): array
     {
         return collect($places)->map(function ($place) {
