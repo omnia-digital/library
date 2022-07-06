@@ -9,7 +9,7 @@
             this.notifications.push({
                 id: e.timeStamp,
                 type: e.detail.type,
-                content: e.detail.content,
+                message: e.detail.message,
             })
         },
         remove(notification) {
@@ -60,7 +60,7 @@
 
                 <!-- Text -->
                 <div class="ml-3 w-0 flex-1 pt-0.5">
-                    <p x-text="notification.content" class="text-sm leading-5 font-medium text-dark-text-color"></p>
+                    <p x-text="notification.message" class="text-sm leading-5 font-medium text-dark-text-color"></p>
                 </div>
 
                 <!-- Remove button -->
