@@ -38,7 +38,7 @@ trait WithMap
         })->all();
     }
 
-    public function showPlaceDetail($placeId) {
-
+    public function showPlaceDetail($placeId)
+    {
     }
 }
