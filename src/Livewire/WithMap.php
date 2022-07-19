@@ -26,6 +26,7 @@ trait WithMap
             return [
                 'type' => 'Feature',
                 'properties' => [
+                    'id' => $place['id'],
                     'description' => $place['description'] ?? $place['name'],
                     'icon' => $place['icon'] ?? 'rocket-15',
                 ],
@@ -35,5 +36,9 @@ trait WithMap
                 ],
             ];
         })->all();
+    }
+
+    public function showPlaceDetail($placeId) {
+
     }
 }

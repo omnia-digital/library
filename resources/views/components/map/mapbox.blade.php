@@ -71,6 +71,8 @@
                 // When a click event occurs on a feature in the places layer, open a popup at the
                 // location of the feature, with description HTML from its properties.
                 map.on('click', 'places', (e) => {
+                @this.showPlaceDetail(e.features[0].properties.id);
+
                     // Copy coordinates array.
                     const coordinates = e.features[0].geometry.coordinates.slice();
                     const description = e.features[0].properties.description;
