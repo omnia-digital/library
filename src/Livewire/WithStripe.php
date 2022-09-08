@@ -37,13 +37,13 @@ trait WithStripe
 
         // Notify payment method was updated.
         $this->dispatchBrowserEvent(empty($event) ? 'notify' : $event, [
-            'type'    => 'success',
-            'message' => empty($message) ? 'Your payment method was updated!' : $message
+            'type' => 'success',
+            'message' => empty($message) ? 'Your payment method was updated!' : $message,
         ]);
 
         return [
-            'card_brand'     => $billable->card_brand,
-            'card_last_four' => $billable->card_last_four
+            'card_brand' => $billable->card_brand,
+            'card_last_four' => $billable->card_last_four,
         ];
     }
 }
