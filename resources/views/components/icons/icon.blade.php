@@ -2,6 +2,7 @@
     'name' => 'name',
     'size' => 'w-6 h-6',
     'color' => '',
+    'class' => '',
 ])
 
 @if(Str::contains($name,'heroicon'))
