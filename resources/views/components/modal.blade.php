@@ -85,7 +85,7 @@
                 @if (isset($actions) || $hideCancelButton === false)
                     <div class="mt-8 flex space-x-2">
                         @if ($hideCancelButton === false)
-                            <button type="button" x-on:click="closeModal" class="bg-neutral hover:border hover:border-neutral-dark rounded px-3 py-1.5">
+                            <button type="button" x-on:click="closeModal" class="bg-neutral border border-neutral-dark hover:bg-gray-300 rounded px-3 py-1.5">
                                 {{ $cancelButtonText }}
                             </button>
                         @endif
