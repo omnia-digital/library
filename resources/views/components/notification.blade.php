@@ -3,7 +3,7 @@
 ])
 
 <div
-    x-data="{
+        x-data="{
         notifications: [],
         add(e) {
             this.notifications.push({
@@ -16,15 +16,15 @@
             this.notifications = this.notifications.filter(i => i.id !== notification.id)
         },
     }"
-    x-on:notify.window="add($event)"
-    class="fixed bottom-0 right-0 z-10 pr-4 pb-4 max-w-xs w-full flex flex-col space-y-4 sm:justify-start"
-    role="status"
-    aria-live="polite"
+        x-on:notify.window="add($event)"
+        class="fixed bottom-0 right-0 z-[999] pr-4 pb-4 max-w-xs w-full flex flex-col space-y-4 sm:justify-start"
+        role="status"
+        aria-live="polite"
 >
     <!-- Notification -->
     <template x-for="notification in notifications" :key="notification.id">
         <div
-            x-data="{
+                x-data="{
                 show: false,
                 init() {
                     this.$nextTick(() => this.show = true)
@@ -37,9 +37,9 @@
                     setTimeout(() => this.remove(this.notification), 500)
                 },
             }"
-            x-show="show"
-            x-transition.duration.500ms
-            class="relative max-w-sm w-full bg-secondary pl-6 pr-4 py-4 border border-neutral rounded-md shadow-lg pointer-events-auto"
+                x-show="show"
+                x-transition.duration.500ms
+                class="relative max-w-sm w-full bg-neutral pl-6 pr-4 py-4 border border-black rounded-md shadow-lg pointer-events-auto"
         >
             <div class="flex items-start">
                 <!-- Icons -->
