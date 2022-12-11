@@ -5,9 +5,9 @@
     'class'=>''
 ])
 
-<x-heading.heading heading="h3"
+<x-library::heading.heading heading="h3"
                             :text-color="$textColor"
                             :text-size="$textSize"
                             :bold-class="$boldClass"
                             :class="$class"
->{{ $slot }}</x-heading.heading>
+>{{ $slot }}</x-library::heading.heading>
