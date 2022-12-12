@@ -23,7 +23,7 @@ trait WithInlineInput
         $this->editMode = true;
 
         $this->dispatchBrowserEvent('edit-mode', [
-            'id' => $this->model()->getKey()
+            'id' => $this->model()->getKey(),
         ]);
     }
 

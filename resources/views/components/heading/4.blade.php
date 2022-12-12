@@ -1,11 +1,13 @@
 @props([
-    'boldClass' => 'font-medium'
+    'textColor' => 'text-heading-default-color',
+    'textSize' => 'text-base',
+    'boldClass' => 'font-medium',
+    'class'=>''
 ])
 
-@php
-    $class = 'text-base leading-6 text-dark-text-color ' . $boldClass;
-@endphp
-
-<h3 {{ $attributes->merge(['class' => $class]) }}>
-    {{ $slot }}
-</h3>
+<x-library::heading.heading heading="h4"
+                            :text-color="$textColor"
+                            :text-size="$textSize"
+                            :bold-class="$boldClass"
+                            :class="$class"
+>{{ $slot }}</x-library::heading.heading>

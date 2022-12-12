@@ -8,9 +8,9 @@
         <div class="px-4 py-5 sm:px-6 -ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
             <div class="ml-4 mt-2">
                 @isset($heading)
-                    <h3 class="text-base leading-6 font-medium text-dark-text-color">
+                    <x-heading.3 class="text-base leading-6 font-medium text-dark-text-color">
                         {{ $heading }}
-                    </h3>
+                    </x-heading.3>
                 @endisset
 
                 @isset ($description)
