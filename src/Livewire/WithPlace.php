@@ -46,7 +46,7 @@ trait WithPlace
             throw new \Exception($response['error_message'] ?? 'Cannot find place!');
         }
 
-        return new Place($response['result']['address_components']);
+        return new Place($response['result']['address_components'], $response['result']['geometry']['location']);
     }
 
     protected function getPlaceApiKey(): mixed

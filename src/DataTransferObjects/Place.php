@@ -8,10 +8,12 @@ use Illuminate\Support\Collection;
 class Place
 {
     protected Collection $addressComponents;
+    protected Collection $location;
 
-    public function __construct(array $addressComponents)
+    public function __construct(array $addressComponents, array $location = [])
     {
         $this->addressComponents = collect($addressComponents);
+        $this->location = collect($location);
     }
 
     public function address(): string
@@ -53,5 +55,15 @@ class Place
         $state = $this->addressComponents->first(fn ($component) => Arr::get($component, 'types.0') === 'country');
 
         return $state['short_name'] ?? '';
+    }
+
+    public function lat(): string
+    {
+        return $this->location?->lat ?? '';
+    }
+
+    public function lng(): string
+    {
+        return $this->location?->lng ?? '';
     }
 }
