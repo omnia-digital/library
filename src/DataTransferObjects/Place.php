@@ -59,11 +59,11 @@ class Place
 
     public function lat(): string
     {
-        return $this->location?->lat ?? '';
+        return $this->location?->get('lat') ?? '';
     }
 
     public function lng(): string
     {
-        return $this->location?->lng ?? '';
+        return $this->location?->get('lng') ?? '';
     }
 }
