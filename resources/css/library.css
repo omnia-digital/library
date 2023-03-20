@@ -1,2 +1,8 @@
 @import 'tippy.js/dist/tippy.css';
 @import 'tiptap.css';
+
+:root {
+    --secondary: #fff;
+    --card-bg-color: var(--secondary);
+}
+
