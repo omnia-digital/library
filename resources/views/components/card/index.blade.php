@@ -26,7 +26,7 @@
             @endif
         </div>
     @endif
-    <div class="border-t border-gray-200">
+    <div class="border-t border-gray-200 px-4 py-5 sm:px-6 -ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
         {{ $slot }}
     </div>
 </div>

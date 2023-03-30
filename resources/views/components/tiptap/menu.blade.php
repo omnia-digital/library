@@ -28,7 +28,7 @@
 
                 @if (config('library.tiptap.toolbar.items.link', true))
                     <x-library::tiptap.button title="Link" isActive="'link'" x-on:click="showLinkModal">
-                        <x-coolicon-link-02 class="w-5 h-5"/>
+                        <x-coolicon-link class="w-5 h-5"/>
                     </x-library::tiptap.button>
                 @endif
                 @if (config('library.tiptap.toolbar.items.remove_link', true))
@@ -187,7 +187,7 @@
                     <x-coolicon-italic class="w-5 h-5"/>
                 </x-library::tiptap.button>
                 <x-library::tiptap.button title="Link" isActive="'link'" x-on:click="showLinkModal">
-                    <x-coolicon-link-02 class="w-5 h-5"/>
+                    <x-coolicon-link class="w-5 h-5"/>
                 </x-library::tiptap.button>
                 <x-library::tiptap.button title="Remove Link" x-on:click="editor().commands.unsetLink()">
                     <x-coolicon-unlink class="w-5 h-5"/>
