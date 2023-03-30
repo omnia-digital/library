@@ -33,13 +33,13 @@
                 @endif
                 @if (config('library.tiptap.toolbar.items.remove_link', true))
                     <x-library::tiptap.button title="Remove Link" x-on:click="editor().commands.unsetLink()">
-                        <x-coolicon-unlink class="w-5 h-5"/>
+                        <x-library::icons.icon name="fa fa-link-slash" class="w-5 h-5"/>
                     </x-library::tiptap.button>
                 @endif
 
                 @if (config('library.tiptap.toolbar.items.image', true))
                     <x-library::tiptap.button title="Image" x-on:click="showImageModal">
-                        <x-coolicon-image class="w-5 h-5"/>
+                        <x-library::icons.icon name="fa fa-image" class="w-5 h-5"/>
                     </x-library::tiptap.button>
                 @endif
 
@@ -76,19 +76,19 @@
 
                 @if (config('library.tiptap.toolbar.items.bullet_list', true))
                     <x-library::tiptap.button title="Bullet List" isActive="'bulletList'" x-on:click="editor().chain().focus().toggleBulletList().run()">
-                        <x-coolicon-list-ul class="w-5 h-5"/>
+                        <x-library::icons.icon name="fa fa-list-ul" class="w-5 h-5"/>
                     </x-library::tiptap.button>
                 @endif
 
                 @if (config('library.tiptap.toolbar.items.ordered_list', true))
                     <x-library::tiptap.button title="Ordered List" isActive="'orderedList'" x-on:click="editor().chain().focus().toggleOrderedList().run()">
-                        <x-coolicon-list-ol class="w-5 h-5"/>
+                        <x-library::icons.icon name="fa fa-list-ol" class="w-5 h-5"/>
                     </x-library::tiptap.button>
                 @endif
 
                 @if (config('library.tiptap.toolbar.items.task_list', true))
                     <x-library::tiptap.button title="Task List" isActive="'taskList'" x-on:click="editor().chain().focus().toggleTaskList().run()">
-                        <x-coolicon-list-checklist-alt class="w-5 h-5"/>
+                        <x-library::icons.icon name="fa fa-list-check" class="w-5 h-5"/>
                     </x-library::tiptap.button>
                 @endif
 
@@ -136,7 +136,7 @@
                     </x-library::tiptap.button>
                 @endif
                 {{--                        <x-library::tiptap.button title="Highlight" isActive="highlight" x-on:click="editor().chain().focus().toggleHighlight().run()">--}}
-                {{--                            <x-coolicon-edit class="w-5 h-5"/>--}}
+                {{--                            <x-library::icons.icon name="fa fa-pen-to-square" class="w-5 h-5"/>--}}
                 {{--                        </x-library::tiptap.button>--}}
 
                 @if (config('library.tiptap.toolbar.items.horizontal_rule', true))
@@ -147,7 +147,7 @@
 
                 @if (config('library.tiptap.toolbar.items.line_break', true))
                     <x-library::tiptap.button title="Line Break" x-on:click="editor().chain().focus().setHardBreak().run()">
-                        <x-coolicon-line-break class="w-5 h-5"/>
+                        <x-library::icons.icon name="fa fa-paragraph" class="w-5 h-5"/>
                     </x-library::tiptap.button>
                 @endif
             </div>
@@ -190,7 +190,7 @@
                     <x-coolicon-link class="w-5 h-5"/>
                 </x-library::tiptap.button>
                 <x-library::tiptap.button title="Remove Link" x-on:click="editor().commands.unsetLink()">
-                    <x-coolicon-unlink class="w-5 h-5"/>
+                    <x-library::icons.icon name="fa fa-link-slash" class="w-5 h-5"/>
                 </x-library::tiptap.button>
                 <x-library::tiptap.button title="Heading 1" isActive="'heading', { level: 1 }" x-on:click="editor().chain().focus().toggleHeading({ level: 1 }).run()">
                     <x-coolicon-heading-h1 class="w-5 h-5"/>
@@ -205,10 +205,10 @@
                     <x-coolicon-heading-h4 class="w-5 h-5"/>
                 </x-library::tiptap.button>
                 <x-library::tiptap.button title="Bullet List" isActive="'bulletList'" x-on:click="editor().chain().focus().toggleBulletList().run()">
-                    <x-coolicon-list-ul class="w-5 h-5"/>
+                    <x-library::icons.icon name="fa fa-list-ul" class="w-5 h-5"/>
                 </x-library::tiptap.button>
                 <x-library::tiptap.button title="Ordered List" isActive="'orderedList'" x-on:click="editor().chain().focus().toggleOrderedList().run()">
-                    <x-coolicon-list-ol class="w-5 h-5"/>
+                    <x-library::icons.icon name="fa fa-list-ol" class="w-5 h-5"/>
                 </x-library::tiptap.button>
                 <x-library::tiptap.button title="Merge/Split Cells" x-show="editor().can().mergeOrSplit()" x-on:click="editor().chain().focus().mergeOrSplit().run()">
                     <x-coolicon-combine-cells class="w-5 h-5"/>
@@ -230,7 +230,7 @@
                 <x-coolicon-text-align-right class="w-5 h-5"/>
             </x-library::tiptap.button>
             <x-library::tiptap.button title="Edit Image" x-on:click="showImageModal">
-                <x-coolicon-edit class="w-5 h-5"/>
+                <x-library::icons.icon name="fa fa-pen-to-square" class="w-5 h-5"/>
             </x-library::tiptap.button>
         </div>
     </template>
@@ -251,7 +251,7 @@
                 <x-coolicon-delete-row class="w-5 h-5"/>
             </x-library::tiptap.button>
             <x-library::tiptap.button title="Delete Table" x-on:click="editor().chain().focus().deleteTable().run()">
-                <x-coolicon-table-delete class="w-5 h-5"/>
+                <x-library::icons.icon name="fa fa-diagram-previous" class="w-5 h-5"/>
             </x-library::tiptap.button>
             <x-library::tiptap.button title="Toggle Header Row" x-on:click="editor().chain().focus().toggleHeaderRow().run()">
                 <x-coolicon-bar-top class="w-5 h-5"/>
@@ -276,13 +276,13 @@
                 <x-coolicon-heading-h4 class="w-5 h-5"/>
             </x-library::tiptap.button>
             <x-library::tiptap.button title="Image" x-on:click="showImageModal">
-                <x-coolicon-image class="w-5 h-5"/>
+                <x-library::icons.icon name="fa fa-image" class="w-5 h-5"/>
             </x-library::tiptap.button>
             <x-library::tiptap.button title="Bullet List" isActive="'bulletList'" x-on:click="editor().chain().focus().toggleBulletList().run()">
-                <x-coolicon-list-ul class="w-5 h-5"/>
+                <x-library::icons.icon name="fa fa-list-ul" class="w-5 h-5"/>
             </x-library::tiptap.button>
             <x-library::tiptap.button title="Ordered List" isActive="'orderedList'" x-on:click="editor().chain().focus().toggleOrderedList().run()">
-                <x-coolicon-list-ol class="w-5 h-5"/>
+                <x-library::icons.icon name="fa fa-list-ol" class="w-5 h-5"/>
             </x-library::tiptap.button>
             <x-library::tiptap.button title="Blockquote" isActive="'blockquote'" x-on:click="editor().chain().focus().toggleBlockquote().run()">
                 <x-coolicon-double-quotes-l class="w-5 h-5"/>

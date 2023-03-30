@@ -35,7 +35,7 @@
             type="button"
             class="relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-8 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
         >
-            <x-coolicon-image class="mx-auto h-8 w-8 text-light-text-color"/>
+            <x-library::icons.icon name="fa fa-image" class="mx-auto h-8 w-8 text-light-text-color"/>
             <span class="mt-2 block text-sm font-medium text-base-text-color">
             {{ $label }}
         </span>
