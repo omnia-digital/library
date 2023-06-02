@@ -1,6 +1,7 @@
 @props([
     'mode' => 'single', // Supports: single, multiple, range
-    'format' => 'Y-m-d'
+    'format' => 'Y-m-d',
+    'class' => ''
 ])
 
 <div
@@ -33,7 +34,7 @@
             wire:ignore
             x-ref="picker"
             type="text"
-            {{ $attributes->whereDoesntStartWith('wire:model')->merge(['class' => 'focus:ring-neutral-dark focus:border-neutral-dark block w-full shadow-sm sm:text-sm border-neutral-light rounded-md', 'placeholder' => $placeholder ?? null]) }}
+            {{ $attributes->whereDoesntStartWith('wire:model')->merge(['class' => 'focus:ring-neutral-dark focus:border-neutral-dark block w-full shadow-sm sm:text-sm border-neutral-light rounded-md ' . $class, 'placeholder' => $placeholder ?? null]) }}
     >
 </div>
 
