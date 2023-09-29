@@ -5,6 +5,7 @@ namespace OmniaDigital\OmniaLibrary\Livewire;
 trait WithCachedRows
 {
     protected bool $useCache = false;
+    protected int $cacheTtl = 60 * 60;
 
     public function useCachedRows()
     {
@@ -14,6 +15,11 @@ trait WithCachedRows
     public function getCacheKey()
     {
         return $this->id;
+    }
+
+    public function getCacheTtl()
+    {
+        return $this->cacheTtl;
     }
 
     public function cache($callback)
@@ -26,7 +32,7 @@ trait WithCachedRows
 
         $result = $callback();
 
-        cache()->put($cacheKey, $result);
+        cache()->put($cacheKey, $result, $this->getCacheTtl());
 
         return $result;
     }
