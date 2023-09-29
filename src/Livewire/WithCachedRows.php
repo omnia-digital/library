@@ -7,6 +7,8 @@ trait WithCachedRows
     protected bool $useCache = false;
     protected int $cacheTtl = 60 * 60;
 
+    protected string $cacheKey = '';
+
     public function useCachedRows()
     {
         $this->useCache = true;
@@ -14,7 +16,7 @@ trait WithCachedRows
 
     public function getCacheKey()
     {
-        return $this->id;
+        return $this->cacheKey ?? $this->id;
     }
 
     public function getCacheTtl()
