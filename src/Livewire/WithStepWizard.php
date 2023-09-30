@@ -31,12 +31,12 @@ trait WithStepWizard
     {
         $livewireComponentId = $this->submit();
 
-        $this->dispatchBrowserEvent('next-step-emitted', $livewireComponentId);
+        $this->dispatch('next-step-emitted', $livewireComponentId);
     }
 
     public function back(): void
     {
-        $this->dispatchBrowserEvent('previous-step-emitted');
+        $this->dispatch('previous-step-emitted');
     }
 
     protected function fillSessionData()

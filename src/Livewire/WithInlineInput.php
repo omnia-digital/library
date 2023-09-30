@@ -22,9 +22,10 @@ trait WithInlineInput
     {
         $this->editMode = true;
 
-        $this->dispatchBrowserEvent('edit-mode', [
-            'id' => $this->model()->getKey(),
-        ]);
+        $this->dispatch(
+            'edit-mode',
+            id: $this->model()->getKey(),
+        );
     }
 
     public function submitInlineData()

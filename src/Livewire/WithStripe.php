@@ -33,13 +33,14 @@ trait WithStripe
         $this->emitSelf('stripePaymentMethodUpdated', $billable);
 
         // Let Alpinejs now Stripe payment method updated.
-        $this->dispatchBrowserEvent('stripe-payment-method-updated');
+        $this->dispatch('stripe-payment-method-updated');
 
         // Notify payment method was updated.
-        $this->dispatchBrowserEvent(empty($event) ? 'notify' : $event, [
-            'type' => 'success',
-            'message' => empty($message) ? 'Your payment method was updated!' : $message,
-        ]);
+        $this->dispatch(
+            empty($event) ? 'notify' : $event,
+            type: 'success',
+            message: empty($message) ? 'Your payment method was updated!' : $message,
+        );
 
         return [
             'card_brand' => $billable->card_brand,
