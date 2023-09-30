@@ -6,18 +6,18 @@ trait WithMap
 {
     public function addPlaces(string $mapId, array $places)
     {
-        $this->dispatchBrowserEvent($mapId, [
-            'type' => 'loadPlaces',
-            'places' => $this->formatPlaces($places),
-        ]);
+        $this->dispatch($mapId,
+            type:'loadPlaces',
+            places:$this->formatPlaces($places),
+        );
     }
 
     public function flyTo(string $mapId, string $lng, string $lat)
     {
-        $this->dispatchBrowserEvent($mapId, [
-            'type' => 'fly',
-            'coordinate' => [$lng, $lat],
-        ]);
+        $this->dispatch($mapId,
+            type:'fly',
+            coordinate:[$lng, $lat],
+        );
     }
 
     public function formatPlaces(array $places): array
