@@ -65,7 +65,7 @@
             <div class="mt-6 space-y-4">
                 <div>
                     <x-library::input.label value="URL"/>
-                    <x-library::input.text x-on:link-modal.window="setTimeout(() => $el.focus(), 250)" x-model="url" id="url" placeholder="URL"/>
+                    <x-library::input.text x-on:link-modal.window="setTimeout(() => $el.focus(), 250)" x-model="url" id="url-{{uniqid()}}" placeholder="URL"/>
                     <p x-show="error" x-text="error" class="text-sm text-red-600 mt-1"></p>
                 </div>
                 <div>
