@@ -6,7 +6,8 @@ trait WithMap
 {
     public function addPlaces(string $mapId, array $places)
     {
-        $this->dispatch($mapId,
+        $this->dispatch(
+            $mapId,
             type:'loadPlaces',
             places:$this->formatPlaces($places),
         );
@@ -14,7 +15,8 @@ trait WithMap
 
     public function flyTo(string $mapId, string $lng, string $lat)
     {
-        $this->dispatch($mapId,
+        $this->dispatch(
+            $mapId,
             type:'fly',
             coordinate:[$lng, $lat],
         );

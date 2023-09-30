@@ -36,7 +36,8 @@ trait WithStripe
         $this->dispatch('stripe-payment-method-updated');
 
         // Notify payment method was updated.
-        $this->dispatch(empty($event) ? 'notify' : $event,
+        $this->dispatch(
+            empty($event) ? 'notify' : $event,
             type: 'success',
             message: empty($message) ? 'Your payment method was updated!' : $message,
         );

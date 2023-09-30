@@ -22,7 +22,8 @@ trait WithInlineInput
     {
         $this->editMode = true;
 
-        $this->dispatch('edit-mode',
+        $this->dispatch(
+            'edit-mode',
             id: $this->model()->getKey(),
         );
     }

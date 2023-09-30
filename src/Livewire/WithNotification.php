@@ -6,7 +6,8 @@ trait WithNotification
 {
     public function success(string $message, ?array $action = null)
     {
-        $this->dispatch('notify',
+        $this->dispatch(
+            'notify',
             message: $message,
             type:'success',
             action:$action,
@@ -15,7 +16,8 @@ trait WithNotification
 
     public function error(string $message, ?array $action = null)
     {
-        $this->dispatch('notify',
+        $this->dispatch(
+            'notify',
             message: $message,
             type:'error',
             action:$action,
@@ -24,7 +26,8 @@ trait WithNotification
 
     public function info(string $message, ?array $action = null)
     {
-        $this->dispatch('notify',
+        $this->dispatch(
+            'notify',
             message: $message,
             type:'info',
             action:$action,
