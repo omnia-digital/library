@@ -25,7 +25,7 @@
                     wire:click.prevent="{{ $removeImageAction }}"
                     type="button"
                     class="absolute -top-2 -right-2 z-10 bg-red-100 rounded-full p-1 inline-flex items-center justify-center hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
-                <x-heroicon-o-x class="w-5 h-5 text-red-500 hover:text-red-400"/>
+                <x-library::icons.icon name="fa-regular fa-x" class="w-5 h-5 text-red-500 hover:text-red-400"/>
             </button>
 
             <div x-on:click.prevent="showMediaManager('{{ $file }}', {{ Illuminate\Support\Js::from($metadata) }})"
