@@ -30,7 +30,7 @@ trait WithStripe
         $billable->updateDefaultPaymentMethod($this->stripeToken);
 
         // Let Livewire knows Stripe payment method updated.
-        $this->emitSelf('stripePaymentMethodUpdated', $billable);
+        $this->dispatch('stripePaymentMethodUpdated', $billable)->self();
 
         // Let Alpinejs now Stripe payment method updated.
         $this->dispatch('stripe-payment-method-updated');
