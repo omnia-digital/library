@@ -16,6 +16,11 @@ trait WithCachedRows
         $this->useCache = true;
     }
 
+    public function useTags($tags)
+    {
+        $this->tags = $tags;
+    }
+
     public function getCacheKey()
     {
         return $this->cacheKey ?? $this->id;
