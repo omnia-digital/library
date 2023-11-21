@@ -9,6 +9,8 @@ trait WithCachedRows
 
     protected string $cacheKey = '';
 
+    protected array $tags = [];
+
     public function useCachedRows()
     {
         $this->useCache = true;
@@ -27,14 +29,22 @@ trait WithCachedRows
     public function cache($callback)
     {
         $cacheKey = $this->getCacheKey();
+        $cache = cache();
 
-        if ($this->useCache && cache()->has($cacheKey)) {
-            return cache()->get($cacheKey);
+        if ($this->useCache && $cache->has($cacheKey)) {
+            if (!empty($this->tags)) {
+                $cache = $cache->tags($this->tags);
+            }
+            return $cache->get($cacheKey);
         }
 
         $result = $callback();
 
-        cache()->put($cacheKey, $result, $this->getCacheTtl());
+        if (!empty($this->tags)) {
+            $cache = $cache->tags($this->tags);
+        }
+
+        $cache->put($cacheKey, $result, $this->getCacheTtl());
 
         return $result;
     }
