@@ -35,20 +35,15 @@ trait WithCachedRows
     {
         $cacheKey = $this->getCacheKey();
         $cache = cache();
+        if (! empty($this->tags)) {
+            $cache = $cache->tags($this->tags);
+        }
 
         if ($this->useCache && $cache->has($cacheKey)) {
-            if (! empty($this->tags)) {
-                $cache = $cache->tags($this->tags);
-            }
-
             return $cache->get($cacheKey);
         }
 
         $result = $callback();
-
-        if (! empty($this->tags)) {
-            $cache = $cache->tags($this->tags);
-        }
 
         $cache->put($cacheKey, $result, $this->getCacheTtl());
 
