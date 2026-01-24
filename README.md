@@ -1,27 +1,72 @@
 # Omnia Library
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/omnia-digital/library.svg?style=flat-square)](https://packagist.org/packages/omnia-digital/library)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/omnia-digital/library/run-tests?label=tests)](https://github.com/omnia-digital/library/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/omnia-digital/library/Check%20&%20fix%20styling?label=code%20style)](https://github.com/omnia-digital/library/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/omnia-digital/library.svg?style=flat-square)](https://packagist.org/packages/omnia-digital/library)
 
-Offer a bunch of components for modern web.
+A comprehensive Laravel Livewire component library with UI components, traits, and third-party integrations.
+
+## Requirements
+
+- PHP 8.2+
+- Laravel 10.x or 11.x
+- Livewire 2.10+ or 3.x
+
+## Features
+
+### Livewire Traits
+
+Reusable traits to add common functionality to your Livewire components:
+
+- **WithModal** - Modal dialog management
+- **WithNotification** - Toast and notification handling
+- **WithSorting** - Data sorting functionality
+- **WithCachedRows** - Row caching for improved performance
+- **WithStepWizard** - Multi-step wizard navigation
+- **WithStripe** - Stripe payment integration
+- **WithPlace** - Google Places & Mapbox location picker
+- **WithMap** - Interactive map functionality
+- **WithLayoutSwitcher** - Grid/list layout toggling
+- **WithInlineInput** - Inline editing support
+- **WithValidationFails** - Enhanced validation error handling
+
+### Blade Components
+
+Ready-to-use UI components:
+
+- **Layout** - Dropdown, Card, Tag, Notification, Confirm dialog
+- **Forms** - Text input, Date picker, Select, Radio group, Email, Range slider
+- **Integrations** - Place picker, Stripe payment fields, Media manager
+
+### Rich Text Editor
+
+TipTap-powered rich text editor with:
+
+- Extensive toolbar configuration
+- Bubble and floating menus
+- Tables, code blocks, and formatting options
+
+### Third-Party Integrations
+
+- Google Places API
+- Mapbox API
+- Stripe Payments
+- Canva Button API
 
 ## Installation
 
-You can install the package via composer:
+Install the package via composer:
 
 ```bash
 composer require omnia-digital/library
 ```
 
-Publish the package scripts:
+Publish the package assets:
 
 ```bash
 php artisan vendor:publish --tag="library-assets"
 ```
 
-Include the assets
+Include the assets in your layout:
 
 ```html
 <html>
@@ -36,7 +81,7 @@ Include the assets
 </html>
 ```
 
-Config Tailwind CSS for all components in `tailwind.config.js`:
+Configure Tailwind CSS in `tailwind.config.js`:
 
 ```js
 module.exports = {
@@ -47,25 +92,25 @@ module.exports = {
 };
 ```
 
-## Optional Steps
+## Optional Configuration
 
-## Config File + Component Views
+### Config File & Views
 
-You can publish the config file with:
+Publish the config file:
 
 ```bash
 php artisan vendor:publish --tag="library-config"
 ```
 
-Optionally, you can publish the views using
+Publish the views for customization:
 
 ```bash
 php artisan vendor:publish --tag="library-views"
 ```
 
-## Alpine.js Plugins
+### Alpine.js Plugins
 
-This package uses **focus** and **collapse** plugins for improving UI/UX. Consider adding it in your `resources/js/app.js`:
+This package uses **focus** and **collapse** plugins. Add them to your `resources/js/app.js`:
 
 ```js
 import Alpine from 'alpinejs';
@@ -80,13 +125,9 @@ window.Alpine = Alpine;
 Alpine.start();
 ```
 
-## Usage
-
-...
-
 ## Media Manager
 
-To use the Media Manager component, you need to install this package first: https://github.com/omnia-digital/media-manager
+To use the Media Manager component, install the companion package: [omnia-digital/media-manager](https://github.com/omnia-digital/media-manager)
 
 ## Changelog
 
@@ -102,8 +143,12 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Omnia](https://github.com/omnia-digital)
+- [Omnia Church Apps](https://omnia.church)
 - [All Contributors](../../contributors)
+
+## Support
+
+For questions and support, visit [omnia.church](https://omnia.church) or email [info@omnia.church](mailto:info@omnia.church).
 
 ## License
 
