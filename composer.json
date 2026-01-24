@@ -1,23 +1,24 @@
 {
     "name": "omnia-digital/library",
-    "description": "Offer a bunch of components for modern web",
+    "description": "A comprehensive Laravel Livewire component library with UI components, traits, and third-party integrations",
     "keywords": [
         "omnia-digital",
         "laravel",
-        "library"
+        "library",
+        "livewire",
+        "components",
+        "blade",
+        "tiptap",
+        "stripe",
+        "mapbox"
     ],
     "homepage": "https://github.com/omnia-digital/library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Omnia",
-            "email": "phuc@omniadigital.io",
-            "role": "Developer"
-        },
-        {
-            "name": "Omnia",
-            "email": "josht@omniadigital.io",
-            "role": "Developer"
+            "name": "Omnia Church Apps",
+            "email": "info@omnia.church",
+            "homepage": "https://omnia.church"
         }
     ],
     "require": {
